@@ -1,0 +1,12 @@
+#AppBarBox{
+    width: 100%;
+}
+#AppBar{
+    background-color: #EF5350;
+    width: 100%;
+}
+
+#Logo{
+    width: 6%;
+    margin-right: 2%;
+}
