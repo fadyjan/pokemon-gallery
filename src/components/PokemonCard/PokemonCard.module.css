@@ -1,0 +1,48 @@
+.cardWrapper {
+  cursor: pointer;
+  border: #7d7d7d solid 1px;
+  border-radius: 4px;
+  width: 250px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+}
+.cardImg :hover{
+    transform: scale(1.1);
+
+}
+
+.cardImg {
+  background-color: #f2f2f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  height: 250px;
+}
+
+.cardImg img {
+
+    width: 48%;
+  height: 100%;
+}
+
+.cardInfo {
+  padding: 15px;
+}
+
+.cardInfo h3 {
+  color: #333;
+}
+
+.cardTypes {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cardTypes span {
+  font-size: 15px;
+  padding: 5px 20px;
+  border-radius: 5px;
+  color: black;
+}
