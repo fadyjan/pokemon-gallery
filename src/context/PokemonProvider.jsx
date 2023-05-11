@@ -52,6 +52,7 @@ export const PokemonProvider = ({ children }) => {
 
   function getPokemonBySearch(searchTerm){
     console.log("SearchTerm", searchTerm);
+    searchTerm= searchTerm.toLowerCase();
     const filteredData = originalPokemonList.filter((record) => {
       //if no input the return the original
       if (searchTerm === "") {
