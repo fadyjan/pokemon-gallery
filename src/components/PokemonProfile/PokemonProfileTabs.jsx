@@ -52,7 +52,7 @@ export default function PokemonProfileTabs({selectedPokemon}) {
     //like container div
     <>
       {selectedPokemon && (
-        <Box sx={{ bgcolor: "transparent", width: 500 }}>
+        <Box >
           <AppBar position="static" id={module.AppBarTabs}>
             <Tabs
               value={value}

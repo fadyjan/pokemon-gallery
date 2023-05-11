@@ -5,10 +5,9 @@ import LoadingSpinner from "../LoadingSpinner/LoadingSpinner";
 import { PokemonContext } from '../../context/PokemonContext';
 
 import modules from "./PokemonGallery.module.css";
-import Pagination from "../Pagination/Pagination";
 
 const PokemonGallery = () => {
-  const { goToPreviousPage, goToNextPage, pokemonList,previousPageUrl } =useContext(PokemonContext);
+  const {pokemonList} =useContext(PokemonContext);
   return (
     <div id={modules.PokemonWrapper}>
       {pokemonList.length > 0 ? (
@@ -19,7 +18,6 @@ const PokemonGallery = () => {
         <LoadingSpinner></LoadingSpinner>
       )}
 
-      <Pagination goToNextPage={goToNextPage} goToPreviousPage={goToPreviousPage} previousPageUrl = {previousPageUrl}></Pagination>
 
     </div>
   );

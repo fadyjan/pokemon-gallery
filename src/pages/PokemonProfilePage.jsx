@@ -38,6 +38,7 @@ const PokemonProfilePage = () => {
         <div id={modules.PrfilePageWrapper}>
           <div id={modules.PokemonWrapper}>
             <img
+            id={modules.PokemonProfileImg}
               src={selectedPokemon.sprites.other.dream_world.front_default}
             ></img>
             <div id={modules.PokemonInfoWrapper}>

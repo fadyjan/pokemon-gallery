@@ -1,0 +1,19 @@
+#ButtonWrapper{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+}
+
+#ButtonWrapper button {
+    cursor: pointer;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border: 1px solid transparent;
+}   
+
+#NextBTn{
+    color: white;
+    background-color: rgb(197, 17, 17);
+}
