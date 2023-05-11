@@ -1,9 +1,10 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from 'react';
 import { PokemonContext } from './PokemonContext';
 import axios from 'axios';
 export const PokemonProvider = ({ children }) => {
-
+  const [originalPokemonList,filteredData] = useState ([])
   const [pokemonList, SetPokemonList] = useState([]);
   const [currentPageUrl, SetCurrentPageUrl] = useState("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=6");
 
@@ -17,6 +18,7 @@ export const PokemonProvider = ({ children }) => {
       .then((response) => {
         SetNextPageUrl(response.data.next)
         SetPreviousPageUrl(response.data.previous)
+
         const data = response.data.results;
         const dataDetails = [];
 
@@ -27,6 +29,7 @@ export const PokemonProvider = ({ children }) => {
             // Update the state after all the data is fetched
             if (data.length === dataDetails.length) {
               SetPokemonList(dataDetails);
+              filteredData(dataDetails)
             }
           });
         });
@@ -47,6 +50,22 @@ export const PokemonProvider = ({ children }) => {
 
   }
 
+  function getPokemonBySearch(searchTerm){
+    console.log("SearchTerm", searchTerm);
+    const filteredData = originalPokemonList.filter((record) => {
+      //if no input the return the original
+      if (searchTerm === "") {
+        return record;
+      } else {
+        console.log(record.name.toLowerCase().includes(searchTerm))
+        return record.name.toLowerCase().includes(searchTerm);
+      }
+    });
+    SetPokemonList(filteredData)
+    console.log(filteredData);
+    return filteredData
+  }
+
   return (
     <PokemonContext.Provider
         value={{
@@ -54,6 +73,7 @@ export const PokemonProvider = ({ children }) => {
             goToNextPage,
             pokemonList,
             previousPageUrl,
+            getPokemonBySearch,
         }}
     >
         {children}

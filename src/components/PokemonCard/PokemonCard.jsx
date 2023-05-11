@@ -1,22 +1,27 @@
 import PropTypes from "prop-types";
-import modules from "./PokemonCard.module.css";
+import  "./PokemonCard.css";
 import { Link } from "react-router-dom";
 
 function PokemonCard({pokemon}) {
+
+  function CapitalizeFirstLetter(pokemonName){
+   pokemonName = pokemonName.charAt(0).toUpperCase() + pokemonName.slice(1);
+   return pokemonName
+  }
   return (
-    <Link to={`/pokemon/${pokemon.id}`}>
-      <div className={modules.cardWrapper}>
-        <div className={modules.cardImg}>
+    <Link to={`/pokemon/${pokemon.id}`} className="LinkELement">
+      <div className= "cardWrapper">
+        <div className="cardImg">
           <img
             src={pokemon.sprites.other.dream_world.front_default}
             alt={`Pokemon ${pokemon.name}`}
           />
         </div>
-        <div className={modules.cardInfo}>
-          <h3>{pokemon.name}</h3>
-          <div className={modules.cardTypes}>
+        <div className="cardInfo">
+          <h3>{CapitalizeFirstLetter(pokemon.name)}</h3>
+          <div className="cardTypesContainer">
             {pokemon.types.map((type) => (
-              <span key={type.type.name}>{type.type.name}</span>
+              <label className={type.type.name +" typeSpan"} key={type.type.name}>{CapitalizeFirstLetter(type.type.name)}</label>
             ))}
           </div>
         </div>
