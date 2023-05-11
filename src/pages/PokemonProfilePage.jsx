@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import modules from "./PokemonProfilePage.module.css";
-import PokemonProfileTabs from "../components/PokemonProfile/PokemonProfileTabs";
+import PokemonProfileTabs from "../components/PokemonProfileTabs/PokemonProfileTabs";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 import axios from "axios";
 

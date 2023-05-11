@@ -1,9 +1,8 @@
 import ReactDOM from "react-dom/client";
-import "./App.css";
 import { PokemonProvider } from "./context/PokemonProvider";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
+import "./main.css";
 import SearchAppBar from "./components/SearchAppBar/SearchAppBar";
 import HomePage from "./pages/HomePage";
 import PokemonProfilePage from "./pages/PokemonProfilePage";
