@@ -1,6 +1,5 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
 import { useTheme } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
 import Tabs from "@mui/material/Tabs";
@@ -49,10 +48,6 @@ export default function PokemonProfileTabs({selectedPokemon}) {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
-
   return (
     //like container div
     <>
@@ -73,11 +68,7 @@ export default function PokemonProfileTabs({selectedPokemon}) {
             </Tabs>
           </AppBar>
 
-          <SwipeableViews
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
-            index={value}
-            onChangeIndex={handleChangeIndex}
-          >
+
             <TabPanel value={value} index={0} dir={theme.direction}>
               {selectedPokemon.stats.map((state) => {
                 return( <span key={state.stat.name+selectedPokemon.id}>{state.stat.name +'|'+ state.base_stat }<br></br></span>)
@@ -93,7 +84,7 @@ export default function PokemonProfileTabs({selectedPokemon}) {
                 return( <span key={ability.ability.name +selectedPokemon.id}>{ability.ability.name}<br></br></span>)
               })}
             </TabPanel>
-          </SwipeableViews>
+
         </Box>
       )}
     </>
