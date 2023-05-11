@@ -45,7 +45,7 @@ const PokemonProfilePage = () => {
               <h1>{selectedPokemon.name}</h1>
               <div id = {modules.abilities}>
                 {selectedPokemon.types.map((type) => (
-                  <span key={type.type.name}>{type.type.name}</span>
+                  <span className={type.type.name +" typeSpan"} key={type.type.name}>{type.type.name}</span>
                 ))}
               </div>
             </div>
