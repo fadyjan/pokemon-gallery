@@ -38,13 +38,10 @@
   flex-direction: column;
 }
 
-#abilities {
-}
-
 @media (max-width : 680px) {
   #PrfilePageWrapper {
    width: 90%;
-   height: 70%;
+   height: unset;
     margin: 0;
     min-width : unset ; 
 
